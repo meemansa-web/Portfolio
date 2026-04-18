@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meemansa Sakhla | Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header class="site-header animate-fade delay-1">
@@ -16,6 +17,11 @@
                 <a href="#projects">Projects</a>
                 <a href="#contact">Contact</a>
             </nav>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
         </div>
     </header>
 
@@ -131,7 +137,25 @@
                         <a class="social-link" href="https://github.com/meemansa-web" target="_blank" rel="noreferrer">GitHub</a>
                     </div>
                 </div>
-                <a class="btn btn-primary" href="mailto:meemansa.meemansa2405@gmail.com">Email Me</a>
+                <form class="contact-form" action="#" method="post" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required aria-describedby="name-error">
+                        <span id="name-error" class="error-message" aria-live="polite"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required aria-describedby="email-error">
+                        <span id="email-error" class="error-message" aria-live="polite"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4" required aria-describedby="message-error"></textarea>
+                        <span id="message-error" class="error-message" aria-live="polite"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <div id="form-status" class="form-status" aria-live="polite"></div>
+                </form>
             </div>
         </section>
     </main>
